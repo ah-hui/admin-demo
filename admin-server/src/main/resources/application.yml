@@ -10,6 +10,10 @@ info:
 spring:
   application:
     name: spring-boot-admin-server
+  security:
+    user:
+      name: "admin"
+      password: "admin"
 eureka:
   client:
     service-url:
@@ -17,6 +21,9 @@ eureka:
   instance:
     prefer-ip-address: true # 将自己的IP注册到eureka server，如果为false（默认），则注册的是hostname
     instance-id: ${spring.application.name}:${server.port}
+    metadata-map:
+      user.name: ${spring.security.user.name}
+      user.password: ${spring.security.user.password}
 
 management:
   endpoints:
