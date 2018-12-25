@@ -1,14 +1,31 @@
 server:
   port: 8812
+info:
+  app:
+    name: @project.artifactId@
+    encoding: @project.build.sourceEncoding@
+    java:
+      source: @java.version@
+      target: @java.version@
 spring:
   application:
     name: spring-boot-admin-client
-  boot:
-    admin:
-      client:
-        url: http://localhost:8811
+
+# 不再使用SBA client注册
+#  boot:
+#    admin:
+#      client:
+#        url: http://localhost:8811
 #        instance:
 #          prefer-ip: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://172.19.23.157:8810/eureka
+  instance:
+    prefer-ip-address: true # 将自己的IP注册到eureka server，如果为false（默认），则注册的是hostname
+    instance-id: ${spring.application.name}:${server.port}
 
 management:
   endpoints:

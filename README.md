@@ -9,4 +9,5 @@
 
 # T01分支
 - 使用eureka负责发现，SBA server注册到eureka实现监控，不再依赖和使用SBA client
+- 此时其他服务只需要注册到eureka即可，不用依赖SBA client，当然你也可以依赖SBA client并使用它，完全不使用eureka（这就比较逗比了别忘了你玩的是cloud）实现监控
 

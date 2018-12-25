@@ -4,3 +4,4 @@
 target
 /admin-client/admin-client.iml
 /admin-server/admin-server.iml
+/eureka-server/eureka-server.iml
