@@ -1,0 +1,10 @@
+server:
+  port: 8811
+spring:
+  application:
+    name: spring-boot-admin-server
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: ${EUREKA_SERVICE_URL:http://localhost:8811}/eureka/
+
